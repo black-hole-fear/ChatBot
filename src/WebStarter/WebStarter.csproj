@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>$(TargetFramework)</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <UserSecretsId>4fb8c9df-7975-4926-ba73-46c8ca440691</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(SolutionName)==PizzaBot">
+    <PackageReference Include="BotSharp.Logger" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.OpenAPI" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.AzureOpenAI" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.GoogleAI" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.HuggingFace" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.KnowledgeBase" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.MetaAI" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.LLamaSharp" Version="$(BotSharpVersion)" />
+    <PackageReference Include="BotSharp.Plugin.ChatHub" Version="$(BotSharpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\tests\BotSharp.Plugin.PizzaBot\BotSharp.Plugin.PizzaBot.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="$(SolutionName)==BotSharp">
+    <ProjectReference Include="..\Infrastructure\BotSharp.Core\BotSharp.Core.csproj" />
+    <ProjectReference Include="..\Infrastructure\BotSharp.Logger\BotSharp.Logger.csproj" />
+    <ProjectReference Include="..\Infrastructure\BotSharp.OpenAPI\BotSharp.OpenAPI.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.Dashboard\BotSharp.Plugin.Dashboard.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.GoogleAI\BotSharp.Plugin.GoogleAI.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.MongoStorage\BotSharp.Plugin.MongoStorage.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.AzureOpenAI\BotSharp.Plugin.AzureOpenAI.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.SparkDesk\BotSharp.Plugin.SparkDesk.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.ChatbotUI\BotSharp.Plugin.ChatbotUI.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.HuggingFace\BotSharp.Plugin.HuggingFace.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.KnowledgeBase\BotSharp.Plugin.KnowledgeBase.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.MetaAI\BotSharp.Plugin.MetaAI.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.MetaMessenger\BotSharp.Plugin.MetaMessenger.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.Qdrant\BotSharp.Plugin.Qdrant.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.RoutingSpeeder\BotSharp.Plugin.RoutingSpeeder.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.WeChat\BotSharp.Plugin.WeChat.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.SemanticKernel\BotSharp.Plugin.SemanticKernel.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.Twilio\BotSharp.Plugin.Twilio.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.TelegramBots\BotSharp.Plugin.TelegramBots.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.ChatHub\BotSharp.Plugin.ChatHub.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.HttpHandler\BotSharp.Plugin.HttpHandler.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.LLamaSharp\BotSharp.Plugin.LLamaSharp.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.SqlDriver\BotSharp.Plugin.SqlDriver.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.WebDriver\BotSharp.Plugin.WebDriver.csproj" />
+    <ProjectReference Include="..\Plugins\BotSharp.Plugin.AnthropicAI\BotSharp.Plugin.AnthropicAI.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  
+</Project>
